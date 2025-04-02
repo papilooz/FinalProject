@@ -1,0 +1,81 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #320b0b, #8b0000); /* Dark Red Gradient */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Credit Section */
+.credit-section {
+    background: rgba(255, 255, 255, 0.15); /* Transparent White */
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Glass Effect */
+    padding: 40px 30px;
+    max-width: 700px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Titles */
+.title {
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #ffd700; /* Gold */
+}
+
+.subtitle {
+    font-size: 18px;
+    font-style: italic;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* Content */
+.description, .footer-text, .thank-you {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* References List */
+.references {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.references li {
+    margin: 10px 0;
+}
+
+/* Reference Links */
+.references a {
+    color: #ffd700; /* Gold */
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.references a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+/* Thank You Message */
+.thank-you {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ffd700;
+}

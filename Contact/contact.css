@@ -1,0 +1,236 @@
+/* General Section Styling */
+.container {
+    padding: 40px 20px; /* Adds space inside each section */
+    max-width: 1200px;  /* Keeps content centered and well-structured */
+    margin: 0 auto;     /* Centers the container */
+}
+
+.jumbotron {
+    position: relative;
+    background-color: #000;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.text-content {
+    color: #fff;;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.hero-image {
+    height: 100%;
+    object-fit: contain;
+}
+
+.row {
+    margin: 0 !important;
+}
+.location-section {
+    text-align: center;
+    background-color: #fff;
+    padding: 40px 20px;
+}
+.location-section .list-unstyled li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-unstyled li i {
+    color: #d32f2f;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .location-section .col-md-6 {
+        margin-bottom: 20px;
+    }
+
+    .location-section .text-center {
+        margin-bottom: 15px;
+    }
+
+    .location-section .list-unstyled li {
+        font-size: 0.9rem;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+}
+
+/* Customer Support Section */
+.customer-support-section {
+    background-color: #f9f9f9;
+}
+
+
+/* Title Styling */
+.container h6  {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #d32f2f;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Body */
+.card-body {
+    padding: 20px;
+}
+
+/* Icons */
+.card-body i {
+    font-size: 2rem;
+    color: #d32f2f;
+}
+
+/* Card Title */
+.card-body h5 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Card Text */
+.card-body p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.card-body a {
+    color: #d32f2f;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-body a:hover {
+    color: #a32121;
+}
+
+
+/* FAQ Section */
+.faq-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* FAQ Heading */
+.faq-section h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Accordion Styling */
+.accordion-item {
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Accordion Button */
+.accordion-button {
+    background-color: #f8f9fa;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    padding: 15px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Accordion Button Hover */
+.accordion-button:hover {
+    background-color: #d32f2f; /* Red accent color */
+    color: white;
+}
+
+/* Accordion Button Active (When Opened) */
+.accordion-button:not(.collapsed) {
+    background-color: #d32f2f;
+    color: white;
+}
+
+/* Accordion Body */
+.accordion-body {
+    font-size: 1rem;
+    color: #555;
+    padding: 15px;
+    background-color: #fff;
+}
+
+/* Contact Us Section */
+.contact-section {
+    background-color: #f9f9f9;
+}
+
+.btn-danger {
+    background-color: #d32f2f;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px;
+    transition: background 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #a32121;
+}
+
+.form-control,
+.form-select {
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #d32f2f;
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.5);
+}
+
+/* Responsive Contact Form */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 20px 10px;
+    }
+
+    .contact-section .form-control,
+    .contact-section .form-select {
+        padding: 10px;
+    }
+
+    .contact-section .btn-danger {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .contact-section img {
+        display: none;
+    }
+}
+
+
+

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="contact.css">
+    <!-- MapTiler SDK -->
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.umd.min.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v3.0.1/maptiler-sdk.css" rel="stylesheet"/>
+</head>
+<body>
+  <!--NAV-->
+  <div id="navbar"></div>
+
+    <!--HERO SECTION-->
+    <div class="jumbotron text-white mb-5">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="text-content">
+                <h1 class="display-4" style="font-weight: 900;">Need Assistance?</h1>
+                <h1 style="font-weight:500">We’re Here to Help!</h1>
+                <p class="lead" style="font-weight: 400;">See below for more details</p>
+            </div>
+            <div class="image-content">
+                <img src="car-contact-hero.png" alt="Car" class="hero-image">
+            </div>     
+        </div>
+    </div>
+
+ <!-- LOCATION & HOURS -->
+<section class="location-section py-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h6 class="fw-bold text-uppercase mb-2">Our Location & Hours</h6>
+                <h2 class="text-center fw-bold mb-4">Check and Visit our Store</h2>
+                <h5 class="fw-bold">Address</h5>
+                <p><i class="fas fa-map-marker-alt" style="color:#d32f2f;margin-right: 10px;"></i> P. Paredes St., Sampaloc, Manila, PH</p>
+                <h5 class="fw-bold">Business Hours</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-calendar-day"></i> Mon-Fri: &ensp;<strong> 7 AM – 4 PM</strong></li>
+                    <li><i class="fas fa-calendar-week"></i> Sat-Sun: &ensp;<strong> 7 AM – 12 PM</strong></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-12 mx-auto mb-5">
+                <div class="card">
+                    <div class="card-body p-0">
+                        <div id="map" style="width: 100%; height: 500px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- CUSTOMER SUPPORT -->
+<section class="customer-support-section py-5 ">
+    <div class = "container">
+        <div class="row">
+            <h6 class="text-center fw-bold text-uppercase mb-2">Customer Support</h6>
+            <h2 class="text-center fw-bold mb-4">Reach us with this info</h2>
+            <!-- Sales Inquiry -->
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <h5 class="fw-bold mt-2">Sales Inquiry</h5>
+                        <p class="mb-0">Email: <a href="mailto:sales.inqury@gmail.com">sales.inqury@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Support -->
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fa-solid fa-gears"></i>
+                        <h5 class="fw-bold mt-2">Technical Support</h5>
+                        <p class="mb-0">Email: <a href="mailto:tech.suport@gmail.com">tech.suport@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call Us -->
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fa-solid fa-phone"></i>
+                        <h5 class="fw-bold mt-2">Call Us</h5>
+                        <p class="mb-0">Phone: <a href="tel:63123456789">(63)12 345 6789</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!--FAQs-->
+    <section class="container my-5 faq-section">
+        <h6 class="text-center fw-bold text-uppercase mb-2">Frequently Ask Questions</h6>
+        <h2 class="text-center fw-bold mb-4">Have some questions?</h2>
+      <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+              <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                      What warranty comes with my vehicle?
+                  </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">All our cars come with a standard manufacturer’s warranty, and we also 
+                      offer extended warranty packages for additional coverage. Contact us for details on your specific
+                      model.</div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                      Can I schedule a test drive before purchasing a car?
+                  </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">Yes! You can schedule a test drive by filling out our online booking 
+                      form or contacting our sales team. We'll arrange a convenient time for you to experience the car 
+                      firsthand.</div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                      Do you offer financing options for car purchases?
+                  </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">Absolutely! We provide flexible financing plans through our trusted 
+                      banking partners. You can apply online or visit our dealership to discuss the best financing 
+                      option for you.</div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <!--CONTACT FORM-->
+    <section class="contact-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left side: Contact Form -->
+                <div class="col-md-6">
+                    <h6 class="text-danger fw-bold text-uppercase mb-2">Contact Form</h6>
+                    <h2 class="fw-bold mb-4">Send us a Message</h2>
+                    <form id="contactForm" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone Number" required>
+                            </div>
+                            <div class="col-md-6">
+                                <select id="service" name="service" class="form-select" required>
+                                    <option value="">Choose a Option</option>
+                                    <option value="auto-repair">Auto Repair</option>
+                                    <option value="car-repair">Car Repair</option>
+                                    <option value="automotive">Automotive</option>
+                                    <option value="test-drive">Test Drive</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <textarea id="message" name="message" class="form-control" placeholder="Message here.." rows="4" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-danger w-100">APPOINTMENT NOW →</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+    
+                <!-- Right side: Image -->
+                <div class="col-md-6">
+                    <img src="car-repair-person.webp" alt="Car Mechanic" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--FOOTER-->
+    <div id="footer"></div>
+    
+  <script src="contact.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

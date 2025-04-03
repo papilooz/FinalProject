@@ -1,0 +1,102 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Carousel Section */
+.carousel-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Carousel Image Styling */
+.carousel img {
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Carousel Caption */
+.carousel-caption {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 50%;
+}
+
+/* Card Styling */
+.card {
+    height: 100%; /* Ensure all cards are equal in height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border-radius: 10px; /* Add rounded corners */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Add hover effect */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image Styling */
+.card-img-top {
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+    border-bottom: 1px solid #ddd; /* Add a subtle border between the image and body */
+}
+
+/* Card Body Styling */
+.card-body {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Card Title Styling */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Card Text Styling */
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Test Drive Form */
+.form-control, .form-select {
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #d32f2f;
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.5);
+}
+
+/* Button Styling */
+.btn-danger {
+    background-color: #d32f2f;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px;
+}
+
+.btn-danger:hover {
+    background-color: #a32121;
+}

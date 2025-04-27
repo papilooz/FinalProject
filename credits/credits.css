@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  background-color: white;
+  font-family: 'Poppins', sans-serif;
+  color: #2A5772;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #2A5772;
+  font-size: 2.5rem;
+}
+
+.credit-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 0;
+  background-color: #fff;
+  border-radius: 2rem;
+}
+
+.credit-card {
+  background-color: #2A5772;
+  color: white;
+  padding: 60px 0;
+  border-radius: 2rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.credit-card:hover {
+  transform: scale(1.05);
+  background-color: #EE7D57;
+  color: white;
+}
+
+.credit-card .row{
+  margin-bottom: 15px;
+}
+
+/* Modal Content */
+.modal-content {
+  border-radius: 1rem;
+  margin-top: 70px;
+}
+
+.modal-header {
+  background-color: #2A5772;
+  color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+.modal-body ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.modal-body li {
+  margin-bottom: 0.5rem;
+}
+
+.modal-body a {
+  text-decoration: none;
+  color: #2A5772;
+  font-weight: 500;
+}
+
+.modal-body a:hover {
+  color: #EE7D57;
+  text-decoration: underline;
+}
+
+/* For tablets and smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .credit-container {
+    flex-direction: column; /* Stack items vertically */
+    padding: 20px;
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .credit-card .row{
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .credit-card {
+    width: 90%; /* Reduce width for smaller screens */
+    padding: 40px 20px; /* Adjust padding */
+    font-size: 1.5rem; /* Reduce font size */
+    margin: 0 auto; /* Center each card */
+  }
+
+  h2 {
+    font-size: 2rem; /* Adjust heading size */
+  }
+}
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .credit-card {
+    width: 100%; /* Full width for very small screens */
+    padding: 30px 15px; /* Further reduce padding */
+    font-size: 1.2rem; /* Smaller font size */
+  }
+
+  h2 {
+    font-size: 1.8rem; /* Smaller heading size */
+  }
+
+  .modal-body a {
+    font-size: 0.9rem; /* Adjust link font size */
+  }
+}

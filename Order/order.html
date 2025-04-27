@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order Form</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="navbar.css"/>
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="order.css">
+  <link rel="stylesheet" href="preloader.css">
+</head>
+
+<body>
+  <div class="preloader">
+    <div class="loader"></div>
+    <p class="loading-text">Loading...</p>
+  </div>
+
+  <nav class="navbar navbar-expand-lg custom-navbar shadow-sm py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+        <img src="./images/logo-white.png" alt="Vitaly Tea Logo" class="navbar-logo me-2" />
+        VITALY TEA
+      </a>
+      <button class="navbar-toggler d-lg-none" type="button" id="menu-toggle">
+        <span class="custom-toggler-icon">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </span>
+      </button>
+  
+      <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" id="servicesDropdown" role="button" aria-expanded="false" href="../Services/Services.html">SERVICES</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../Services/DigitalPrint.html">DIGITAL PRINTING</a></li>
+                <li><a class="dropdown-item" href="../Services//binding.html">BINDING</a></li>
+                <li><a class="dropdown-item" href="../Services/laminating.html">LAMINATING</a></li>
+                <li><a class="dropdown-item" href="../Services/Cutting.html">CUTTING</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="../menu/menu.html">MENU</a></li>
+          <li class="nav-item"><a class="nav-link" href="order.html">ORDER</a></li>
+          <li class="nav-item"><a class="nav-link" href="../About Us/AboutUs.html">ABOUT</a></li>
+          <li class="nav-item"><a class="btn nav-btn" href="../contact/contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Sidebar for mobile -->
+<div class="mobile-sidebar d-lg-none" id="mobileSidebar">
+  <ul class="mobile-nav-links text-center">
+    <li><a href="../index.html">HOME</a></li>
+    <li><a href="Services.html">SERVICES</a>
+      <ul class="mobile-submenu">
+        <li><a href="../Services/DigitalPrint.html">DIGITAL PRINTING</a></li>
+        <li><a href="../Services/binding.html">BINDING</a></li>
+        <li><a href="../Services/laminating.html">LAMINATING</a></li>
+        <li><a href="../Services/Cutting.html">CUTTING</a></li>
+      </ul>
+    </li>
+    <li><a href="../menu/menu.html">MENU</a></li>
+    <li><a href="order.html">ORDER</a></li>
+    <li><a href="../About Us/AboutUs.html">ABOUT</a></li>
+    <li><a class="btn nav-btn" href="../contact/contact.html">CONTACT</a></li>
+  </ul>
+</div>
+
+  <section class="services-menu-section">
+  <h2>Order Form</h2>
+
+  <div class="services-menu-container">
+    <div class="card step active" id="step1">
+      <div class="section-title">Choose Services</div>
+      <label class="option-box"><input type="checkbox" value="digital" onchange="showNext()"> Digital Printing</label>
+      <label class="option-box"><input type="checkbox" value="binding" onchange="showNext()"> Binding</label>
+      <label class="option-box"><input type="checkbox" value="laminating" onchange="showNext()"> Laminating</label>
+      <label class="option-box"><input type="checkbox" value="cutting" onchange="showNext()"> Cutting</label>
+    </div>    
+
+    <div class="card step active" id="menu">
+      <div class="section-title">Add Something from the Menu?</div>
+      <label class="option-box"><input type="checkbox" value="Warm Drinks" onchange="showMenu()"> Warm Drinks</label>
+      <label class="option-box"><input type="checkbox" value="Cold Drinks" onchange="showMenu()"> Cold Drinks</label>
+      <label class="option-box"><input type="checkbox" value="Sandwiches" onchange="showMenu()"> Sandwiches</label>
+    </div>    
+  </div>
+
+  <!-- SERVICES -->
+  <div class="card step menu-option services-card" id="digital">
+    <div class="section-title">Digital Printing <span class="highlight">₱5/page</span></div>
+    <label class="label-section">Paper Type:</label>
+    <label class="label-section"><input type="radio" name="paper" value="Glossy"> Glossy</label>
+    <label class="label-section"><input type="radio" name="paper" value="Matte"> Matte</label>
+    <label class="label-section"><input type="radio" name="paper" value="Textured"> Textured</label>
+
+    <label class="label-section">Ink:</label>
+    <label class="label-section"><input type="radio" name="ink" value="HP"> Hewlett Packard</label>
+    <label class="label-section"><input type="radio" name="ink" value="Epson"> Epson</label>
+    <label class="label-section"><input type="radio" name="ink" value="Canon"> Canon</label>
+
+    <label class="label-section">Number of Copies:</label>
+    <input type="number" name="digital-copies" min="1">
+
+    <label class="label-section">Upload File:</label>
+    <input type="file" name="digital-file">
+  </div>
+
+  <div class="card step menu-option services-card" id="binding">
+    <div class="section-title">Binding <span class="highlight">₱50/page</span></div>
+    <label>Binding Type:</label>
+    <label><input type="radio" name="binding-type" value="Saddle Stitch"> Saddle Stitch</label>
+    <label><input type="radio" name="binding-type" value="Heated Spine"> Heated Spine</label>
+    <label><input type="radio" name="binding-type" value="Wire"> Wire</label>
+
+    <label>Number of Copies:</label>
+    <input type="number" name="binding-copies" min="1">
+
+    <label>Upload File:</label>
+    <input type="file" name="binding-file">
+  </div>
+
+  <div class="card step menu-option services-card" id="laminating">
+    <div class="section-title">Laminating <span class="highlight">₱30/page</span></div>
+    <label>Number of Copies:</label>
+    <input type="number" name="laminating-copies" min="1">
+    <label>Upload File:</label>
+    <input type="file" name="laminating-file">
+  </div>
+
+  <div class="card step menu-option services-card" id="cutting">
+    <div class="section-title">Cutting <span class="highlight">₱50/page</span></div>
+    <label>Number of Copies:</label>
+    <input type="number" name="cutting-copies" min="1">
+    <label>Upload File:</label>
+    <input type="file" name="cutting-file">
+  </div>
+
+  <!-- MENU -->
+
+  <!-- Warm Drinks -->
+  <div class="card step menu-option" id="Warm Drinks">
+    <div class="section-title">Warm Drinks</div>
+    <div class="flexcontainer">
+      <div class="item" data-name="Mocha">
+        <img class="img-menu" src="images/1.png" alt="Mocha">
+        <div class="section-title">Mocha</div>
+        <p>PHP 150</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Vanila">
+        <img class="img-menu" src="images/2.png" alt="Vanila">
+        <div class="section-title">Vanila</div>
+        <p>PHP 140</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Caramel">
+        <img class="img-menu" src="images/3.png" alt="Tea Latte">
+        <div class="section-title">Caramel</div>
+        <p>PHP 145</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Espresso">
+        <img class="img-menu" src="images/4.png" alt="Espresso">
+        <div class="section-title">Espresso</div>
+        <p>PHP 120</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Americano">
+        <img class="img-menu" src="images/5.png" alt="Americano">
+        <div class="section-title">Americano</div>
+        <p>PHP 160</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Cold Drinks -->
+  <div class="card step menu-option" id="Cold Drinks">
+    <div class="section-title">Cold Drinks</div>
+    <div class="flexcontainer">
+      <div class="item" data-name="Iced Mocha">
+        <img class="img-menu" src="images/6.png" alt="Iced Mocha">
+        <div class="section-title">Iced Mocha</div>
+        <p>PHP 150</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Iced Ube">
+        <img class="img-menu" src="images/7.png" alt="Iced Ube">
+        <div class="section-title">Iced Ube</div>
+        <p>PHP 145</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Iced Caramel">
+        <img class="img-menu" src="images/8.png" alt="Iced Caramel">
+        <div class="section-title">Iced Caramel</div>
+        <p>PHP 150</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Iced Matcha">
+        <img class="img-menu" src="images/9.png" alt="Iced Matcha">
+        <div class="section-title">Iced Matcha</div>
+        <p>PHP 160</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Iced Strawberry">
+        <img class="img-menu" src="images/10.png" alt="Iced Strawberry">
+        <div class="section-title">Iced Strawberry</div>
+        <p>PHP 150</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Iced Brew">
+        <img class="img-menu" src="images/11.png" alt="Iced Brew">
+        <div class="section-title">Iced Brew</div>
+        <p>PHP 140</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Iced Vanila">
+        <img class="img-menu" src="images/12.png" alt="Iced Vanila">
+        <div class="section-title">Iced Vanila</div>
+        <p>PHP 150</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sandwiches -->
+  <div class="card step menu-option" id="Sandwiches">
+    <div class="section-title">Sandwiches</div>
+    <div class="flexcontainer">
+      <div class="item" data-name="Spam Sandwich">
+        <img class="img-menu" src="images/13.png" alt="Spam Sandwich">
+        <div class="section-title">Spam Sandwich</div>
+        <p>PHP 120</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Ham & Cheese">
+        <img class="img-menu" src="images/14.png" alt="Ham & Cheese">
+        <div class="section-title">Ham & Cheese</div>
+        <p>PHP 110</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Cheesy Bacon">
+        <img class="img-menu" src="images/15.png" alt="Cheesy Bacon">
+        <div class="section-title">Cheesy Bacon</div>
+        <p>PHP 130</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Pancake Delight">
+        <img class="img-menu" src="images/16.png" alt="Pancake Delight">
+        <div class="section-title">Pancake Delight</div>
+        <p>PHP 100</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Tuna Sandwich">
+        <img class="img-menu" src="images/17.png" alt="Tuna Sandwich">
+        <div class="section-title">Tuna Sandwich</div>
+        <p>PHP 110</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Grilled Salami">
+        <img class="img-menu" src="images/18.png" alt="Grilled Salami">
+        <div class="section-title">Grilled Salami</div>
+        <p>PHP 120</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Turkey Sandwich">
+        <img class="img-menu" src="images/19.png" alt="Turkey Sandwich">
+        <div class="section-title">Turkey Sandwich</div>
+        <p>PHP 110</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Cheese Delight">
+        <img class="img-menu" src="images/20.png" alt="Cheese Delight">
+        <div class="section-title">Cheese Delight</div>
+        <p>PHP 100</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Baguette Chicken">
+        <img class="img-menu" src="images/21.png" alt="Baguette Chicken">
+        <div class="section-title">Baguette Chicken</div>
+        <p>PHP 130</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity:
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+      <div class="item" data-name="Cheesy Beef">
+        <img class="img-menu" src="images/22.png" alt="Cheesy Beef">
+        <div class="section-title">Cheesy Beef</div>
+        <p>PHP 120</p>
+        <label class="add-to-cart">
+          <input type="checkbox" class="menu-checkbox">
+          Select
+        </label>
+        <div class="quantity">Quantity: 
+          <input type="number" class="qty-input" min="1" value="1">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <a href="checkout.html" class="submit-btn">Submit Order</a>
+
+</section>
+
+<footer class="bg-blue text-white py-4">
+  <div class="container">
+    <div class="row text-center text-lg-start">
+
+      <!-- Logo and Brand -->
+      <div class="col-lg-4 mb-3">
+        <a href="#" class="d-inline-flex align-items-center text-white text-decoration-none">
+          <img src="images/logo-white.png" alt="Logo" id="logo">
+          <span class="fw-bold fs-5">Vitaly Tea</span>
+        </a>
+        <p class="mt-2">Bringing life to your prints.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-4 mb-3">
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="../index.html" class="text-white text-decoration-none">HOME</a></li>
+          <li><a href="../Services/Services.html" class="text-white text-decoration-none">SERVICES</a></li>
+          <li><a href="../menu/menu.html" class="text-white text-decoration-none">MENU</a></li>
+          <li><a href="order.html" class="text-white text-decoration-none">ORDER</a></li>
+          <li><a href="../About Us/AboutUs.html" class="text-white text-decoration-none">ABOUT</a></li>
+          <li><a href="../contact/contact.html" class="text-white text-decoration-none">CONTACT</a></li>
+        </ul>
+      </div>
+
+      <!-- Address -->
+      <div class="col-lg-4 mb-3">
+        <h5 class="fw-bold mb-3">Contact</h5>
+        <p class="footer-add">P. Paredes St., Sampaloc, Manila<br>Philippines 1008</p>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <hr class="border-white opacity-25">
+    <div class="text-center">
+      <small>© 2025 Vitaly Tea. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+<script src="order.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="navbar.js"></script>
+<script src="preloader.js"></script>
+<script src="footer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  background-color: #ffffff;
+  color: #2A5772;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h2{
+  font-size: 2.5rem;
+  color: #2A5772;
+}
+
+h5, h6 {
+  color: #2A5772;
+  font-weight: 600;
+}
+
+p, li{
+    color: black;
+}
+
+.location-section i,
+.contact-section h6 {
+  color: #EE7D57;
+}
+
+.contact-section {
+  background: url(./contact-img2.jpg) no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #F1F0E8;
+  padding: 4rem 1rem;
+}
+
+.contact-section h2 {
+  color: #fff !important;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.contact-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.location-section .text-content p,
+.location-section .text-content li {
+  font-weight: 400;
+}
+
+.location-section .container {
+    display: flex;
+    align-items: stretch; /* Makes both sides equal in height */
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  .location-section .text-content,
+  .location-section .map-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the text vertically */
+  }
+  
+
+/* Contact Section */
+.contact-section .form-control {
+  border: 2px solid #EE7D57;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+.contact-section .form-control:focus {
+  background-color: #EE7D57 !important;
+  color: #fff !important;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styling */
+.btn-danger {
+  background-color: #2A5772;
+  border: 2px solid #fff !important;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #EE7D57;
+}
+
+/* Map styling */
+#map {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(42, 87, 114, 0.2);
+}
+
+/* Responsive Layout for location-section */
+@media (min-width: 768px) {
+    .location-section .container {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 40px;
+    }
+  
+    .location-section .text-content,
+    .location-section .map-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .location-section .container {
+      display: block;
+      padding: 0 1rem;
+    }
+  
+    .location-section .text-content,
+    .location-section .map-content {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    #map {
+      height: 300px; /* Smaller height for mobile screens */
+    }
+  }
+  
+
+  
+  .navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  

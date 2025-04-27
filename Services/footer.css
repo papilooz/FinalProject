@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+footer {
+  background-color: #2A5772;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 0;
+}
+
+footer h5 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+footer h5::after {
+    content: '';
+    display: block;
+    width: 130px;
+    height: 3px;
+    background-color: #EE7D57;
+    margin-top: 10px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #EE7D57 !important;
+}
+
+footer p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+footer img {
+  max-width: 40px;
+  margin-right: 10px;
+}
+
+footer hr {
+  margin: 20px 0;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+footer small {
+  font-size: 0.9rem;
+}
+
+footer #logo{
+    width: 40px; 
+    margin-right: 10px;
+}
+
+footer li:hover{
+    color: #EE7D57;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 990px) {
+    footer {
+      padding: 20px 10px;
+      text-align: center; /* Center-align content for smaller screens */
+    }
+  
+    footer h5 {
+      margin-bottom: 15px;
+    }
+  
+    footer h5::after {
+      width: 100px; /* Reduce the width of the underline */
+      margin: 10px auto 0; /* Center the underline */
+    }
+  
+    footer ul {
+      padding: 0;
+      margin: 0 auto;
+    }
+  
+    footer img {
+      max-width: 30px; /* Reduce image size */
+      margin: 0 auto 10px; /* Center-align and add spacing */
+    }
+  
+    footer p, footer small {
+      font-size: 0.85rem; /* Adjust font size for smaller screens */
+    }
+  
+    footer #logo {
+      width: 30px; /* Reduce logo size */
+      margin: 0 auto 10px;
+    }
+  
+    footer li {
+      margin-bottom: 10px; /* Add spacing between list items */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    footer {
+      padding: 15px 5px;
+    }
+  
+    footer h5 {
+      font-size: 1rem; /* Adjust heading size */
+    }
+  
+    footer p, footer small {
+      font-size: 0.8rem; /* Further reduce font size */
+    }
+  
+    footer img, footer #logo {
+      max-width: 25px; /* Further reduce image and logo size */
+    }
+  }

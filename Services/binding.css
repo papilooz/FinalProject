@@ -1,0 +1,302 @@
+/* binding.css */
+
+/* Styling for the first HTML structure */
+body {
+    font-family: 'Poppins' sans-serif;
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333;
+}
+
+.top-banner {
+    background-image: url('bindback.jpg'); /* Replace with your banner image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+    height: 400pxpx;
+    font-size: larger;
+    position: relative; /* Needed for overlay positioning */
+}
+
+.top-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(42, 87, 114, 0.5); /* Overlay color with 50% opacity */
+    z-index: 1; /* Ensure overlay is above the background image */
+}
+
+.banner-content {
+    position: relative; /* Ensure text stays on top of the overlay */
+    z-index: 2;
+}
+
+.banner-content h1 {
+    font-size: 6em; /* Make the banner heading very big */
+    margin-bottom: 0; /* Adjust margin as needed */
+    line-height: 1; /* Adjust line height as needed */
+    letter-spacing: 5px; /* Optional: Add some letter spacing */
+    text-transform: uppercase; /* Optional: Make it uppercase for emphasis */
+}
+
+.banner-button {
+    background-color: #EE7D57; /* Red button */
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px; /* Adjust margin from the heading */
+}
+
+.main-content {
+    display: flex; /* Ensure flexbox is applied from the start */
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+    align-items: center; /* Vertically align text and image */
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+body.loaded .main-content {
+    opacity: 1;
+}
+
+.content-left {
+    flex: 2;
+    order: 1; /* Make sure text is first */
+}
+
+.content-left h2 {
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.content-left p {
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.read-more-button {
+    background-color: #EE7D57;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.content-right {
+    flex: 1;
+    order: 2; /* Image on the right */
+}
+
+.content-right img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.sidebar {
+    width: 150px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+/* Styling for the second HTML structure */
+.second-section {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background-color: #2A5772;
+    color: #f0f0f0;
+    margin: 20px auto;
+    border-radius: 5px;
+    max-width: 1400px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+body.loaded .second-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.second-section .left-section {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.second-section .left-section h1 {
+    font-size: 4em;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.second-section .left-section p {
+    line-height: 1.6;
+    color: #ccc;
+    font-size: 1.1em;
+}
+
+.image-carousel-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    max-width: 500px;
+    height: 300px;
+}
+
+.image-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-image {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-image:hover {
+    transform: scale(1.05);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-button:hover {
+    opacity: 1;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.second-section .bottom-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.second-section .social-icons {
+    display: flex;
+}
+
+.second-section .social-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.second-section .call-to-action {
+    background-color: #EE7D57;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.second-section .call-to-action:hover {
+    background-color: #ffffff;
+    color: #EE7D57;
+}
+
+/* Basic responsive adjustments */
+@media (max-width: 900px) {
+    .main-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        top: auto;
+        right: auto;
+        margin-top: 30px;
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .sidebar-item {
+        flex: 0 0 auto;
+        width: 100px;
+        margin-right: 10px;
+    }
+
+    .second-section {
+        flex-direction: column;
+    }
+
+    .second-section .left-section {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .image-carousel-container {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+}

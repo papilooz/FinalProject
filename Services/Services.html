@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="preloader.css">  
+    <link rel="stylesheet" href="services.css">
+    <link rel="icon" type="image/x-icon" href="favicon-logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="footer.css"> <!-- or your main CSS file -->
+    <link rel="stylesheet" href="navbar.css" />
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg custom-navbar shadow-sm py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+          <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+            <img src="logo-white.png" alt="Vitaly Tea Logo" class="navbar-logo me-2" />
+            VITALY TEA
+          </a>
+          <button class="navbar-toggler d-lg-none" type="button" id="menu-toggle">
+            <span class="custom-toggler-icon">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </span>
+          </button>
+      
+          <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+              <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" id="servicesDropdown" role="button" aria-expanded="false" href="./Services/Services.html">SERVICES</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="DigitalPrint.html">DIGITAL PRINTING</a></li>
+                            <li><a class="dropdown-item" href="binding.html">BINDING</a></li>
+                            <li><a class="dropdown-item" href="laminating.html">LAMINATING</a></li>
+                            <li><a class="dropdown-item" href="Cutting.html">CUTTING</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="../menu/menu.html">MENU</a></li>
+              <li class="nav-item"><a class="nav-link" href="../Order/order.html">ORDER</a></li>
+              <li class="nav-item"><a class="nav-link" href="../About Us/AboutUs.html">ABOUT</a></li>
+              <li class="nav-item"><a class="btn nav-btn" href="../contact/contact.html">CONTACT</a></li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </nav>
+      
+       <!-- Sidebar for mobile -->
+  <div class="mobile-sidebar d-lg-none" id="mobileSidebar">
+    <ul class="mobile-nav-links text-center">
+      <li><a href="../index.html">HOME</a></li>
+      <li><a href="#">SERVICES</a>
+        <ul class="mobile-submenu">
+          <li><a href="DigitalPrint.html">DIGITAL PRINTING</a></li>
+          <li><a href="binding.html">BINDING</a></li>
+          <li><a href="laminating.html">LAMINATING</a></li>
+          <li><a href="Cutting.html">CUTTING</a></li>
+        </ul>
+      </li>
+      <li><a href="../menu/menu.html">MENU</a></li>
+      <li><a href="../Order/order.html">ORDER</a></li>
+      <li><a href="../About Us/AboutUs.html">ABOUT</a></li>
+      <li><a class="btn nav-btn" href="../contact/contact.html">CONTACT</a></li>
+    </ul>
+  </div>
+
+      
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="logo">
+                <img src="logo-white.png" alt="Vitaly Tea Logo">
+                <h1>Services</h1>
+            </div>
+            <p class="tagline">Ready to bring your brilliant ideas to life? Explore our exceptional range of high-quality printing services designed to make your projects truly shine. From vibrant digital prints to professional binding and protective laminating, all the way to precise cutting, we're dedicated to exceeding your expectations with every touch. Click on a service below to learn more.
+            </p>
+        </div>
+    </div>
+
+    <div class="package-selection">
+        <h2>CHOOSE FROM A VARIETY</h2>
+        <h2>OF PACKAGES.</h2>
+        <div class="separator"></div>
+        <div class="event-types icon-nav-container">
+            <div class="event-item icon-nav-item">
+                <a href="DigitalPrint.html">
+                    <div class="icon-circle">
+                        <img src="print.png" alt="Digital Printing">
+                    </div>
+                    <h3>Digital Printing</h3>
+                    <span class="know-more">Know More</span>
+                </a>
+            </div>
+            <div class="event-item icon-nav-item">
+                <a href="binding.html">
+                    <div class="icon-circle">
+                        <img src="binding.png" alt="Binding">
+                    </div>
+                    <h3>Binding</h3>
+                    <span class="know-more">Know More</span>
+                </a>
+            </div>
+            <div class="event-item icon-nav-item">
+                <a href="laminating.html">
+                    <div class="icon-circle">
+                        <img src="laminating.png" alt="Laminating">
+                    </div>
+                    <h3>Laminating</h3>
+                    <span class="know-more">Know More</span>
+                </a>
+            </div>
+            <div class="event-item icon-nav-item">
+                <a href="cutting.html">
+                    <div class="icon-circle">
+                        <img src="paper-cutter.png" alt="Cutting">
+                    </div>
+                    <h3>Cutting</h3>
+                    <span class="know-more">Know More</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+<footer class="bg-blue text-white py-4">
+    <div class="container">
+      <div class="row text-center text-lg-start">
+  
+        <!-- Logo and Brand -->
+        <div class="col-lg-4 mb-3">
+          <a href="#" class="d-inline-flex align-items-center text-white text-decoration-none">
+            <img src="logo-white.png" alt="Logo" id = "logo">
+            <span class="fw-bold fs-5">Vitaly Tea</span>
+          </a>
+          <p class="mt-2">Bringing life to your prints.</p>
+        </div>
+  
+        <!-- Quick Links -->
+        <div class="col-lg-4 mb-3">
+          <h5 class="fw-bold mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="../index.html" class="text-white text-decoration-none">HOME</a></li>
+            <li><a href="Services.html" class="text-white text-decoration-none">SERVICES</a></li>
+            <li><a href="../menu/menu.html" class="text-white text-decoration-none">MENU</a></li>
+            <li><a href="../Order/order.html" class="text-white text-decoration-none">ORDER</a></li>
+            <li><a href="../About Us/AboutUs.html" class="text-white text-decoration-none">ABOUT</a></li>
+            <li><a href="../contact/contact.html" class="text-white text-decoration-none">CONTACT</a></li>
+          </ul>
+        </div>
+        <!-- Address -->
+        <div class="col-lg-4 mb-3">
+          <h5 class="fw-bold mb-3">Contact</h5>
+          <p>P. Paredes St., Sampaloc, Manila<br>Philippines 1008</p>
+        </div>
+  
+      </div>
+  
+      <!-- Copyright -->
+      <hr class="border-white opacity-25">
+      <div class="text-center">
+        <small>© 2025 Vitaly Tea. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+  <script src="preloader.js"></script>
+  <script src="navbar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<div class="preloader">
+  <div class="loader"></div>
+  <p class="loading-text">Loading...</p>   
+</div>
+
+</html>

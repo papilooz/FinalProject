@@ -367,6 +367,19 @@
   background-color: #ee7d57;
 }
 
+.buy-now-button1 {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ee7d57;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.buy-now-button1:hover {
+  background-color: #2a5772;
+}
+
 /* For smaller tablets and phones */
 @media (max-width: 768px) {
   .hero {

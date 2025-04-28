@@ -365,3 +365,6 @@ body.loaded .second-section {
         object-fit: cover; /* Ensure images cover the entire container */
     }
 }
+.navbar-nav .dropdown:hover .dropdown-menu {
+     display: block;
+}

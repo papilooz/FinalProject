@@ -37,6 +37,21 @@ body {
   z-index: 2;
 }
 
+/* Responsive h1 for smaller screens */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 32px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 24px;
+    padding: 15px;
+  }
+}
+
 /* Team Section */
 .team-section {
   text-align: center;

@@ -66,7 +66,7 @@ footer li:hover{
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 990px) {
     footer {
       padding: 20px 10px;
       text-align: center; /* Center-align content for smaller screens */

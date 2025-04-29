@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial content setup
     const backgroundImages = [
-        'laminate.jpg',
-        'laminate1.jpg',
-        'laminate2.jpg'
+        './images/laminate.jpg',
+        './images/laminate1.jpg',
+        './images/laminate2.jpg'
     ];
     const contentData = [
         { subtitle: "Protection", description: "Our laminating service adds a durable protective layer, keeping your documents safe from damage, wear, and tear. Ideal for business cards, menus, and important documents." },

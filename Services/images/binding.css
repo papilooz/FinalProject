@@ -1,0 +1,367 @@
+/* binding.css */
+
+/* Styling for the first HTML structure */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.top-banner {
+    background-image: url('bindback.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+    height: 400px;
+    font-size: larger;
+    position: relative;
+}
+
+.top-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(42, 87, 114, 0.5);
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.banner-content h1 {
+    font-size: 6em;
+    margin-bottom: 0;
+    line-height: 1;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.banner-button {
+    background-color: #EE7D57;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+.main-content {
+    display: flex;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+body.loaded .main-content {
+    opacity: 1;
+}
+
+.content-left {
+    flex: 2;
+    order: 1;
+}
+
+.content-left h2 {
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.content-left p {
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.read-more-button {
+    background-color: #EE7D57;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.content-right {
+    flex: 1;
+    order: 2;
+}
+
+.content-right img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.sidebar {
+    width: 150px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+/* Styling for the second HTML structure */
+.second-section {
+    display: flex;
+    align-items: center;
+    padding: 40px 20px; /* Added padding for responsiveness */
+    background-color: #2A5772;
+    color: #f0f0f0;
+    margin: 20px auto;
+    border-radius: 5px;
+    max-width: 1400px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    flex-wrap: wrap; /* Added for wrapping on small screens */
+    gap: 20px; /* Added gap for spacing between sections */
+}
+
+body.loaded .second-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.second-section .left-section {
+    flex: 1;
+    padding-right: 20px;
+    min-width: 250px; /* Added to prevent content collapse */
+}
+
+.second-section .left-section h1 {
+    font-size: 4em;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.second-section .left-section p {
+    line-height: 1.6;
+    color: #ccc;
+    font-size: 1.1em;
+}
+
+.image-carousel-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    max-width: 500px;
+    height: 300px;
+    min-width: 250px; /* Added to prevent content collapse */
+}
+
+.image-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-image {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-image:hover {
+    transform: scale(1.05);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-button:hover {
+    opacity: 1;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.second-section .bottom-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Added for responsiveness */
+    gap: 10px; /* Added gap for spacing */
+}
+
+.second-section .social-icons {
+    display: flex;
+}
+
+.second-section .social-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.second-section .call-to-action {
+    background-color: #EE7D57;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.second-section .call-to-action:hover {
+    background-color: #ffffff;
+    color: #EE7D57;
+}
+
+/* Basic responsive adjustments */
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        top: auto;
+        right: auto;
+        margin-top: 30px;
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .sidebar-item {
+        flex: 0 0 auto;
+        width: 100px;
+        margin-right: 10px;
+    }
+
+    .second-section {
+        flex-direction: column;
+    }
+
+    .second-section .left-section {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .image-carousel-container {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .banner-content h1{
+        font-size: 4em; /* Adjusted for smaller screens */
+    }
+    .top-banner{
+        padding: 80px 20px;
+        height: auto;
+    }
+}
+
+/* Smaller screen adjustments (e.g., for mobile) */
+@media (max-width: 600px) {
+    .top-banner {
+        padding: 60px 10px;
+    }
+
+    .banner-content h1 {
+        font-size: 3em;
+    }
+
+    .banner-button {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+
+    .content-left h2 {
+        font-size: 1.75em;
+    }
+
+    .content-left p {
+        font-size: 1em;
+    }
+
+    .read-more-button {
+        font-size: 0.8em;
+        padding: 10px 20px;
+    }
+    .second-section .left-section h1{
+        font-size: 3em;
+    }
+}
+/* Updated CSS for alignment */
+@media (max-width: 900px) {
+    .second-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .second-section .left-section {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .image-carousel-container {
+        max-width: 100%;
+        height: auto;
+        overflow: hidden; /* Ensure images don't overflow container */
+    }
+
+    .carousel-image {
+        width: 100%;  /* Make images fill the container */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure images cover the entire container */
+    }
+}

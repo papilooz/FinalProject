@@ -8,7 +8,7 @@ body {
 }
 
 .top-banner {
-    background-image: url('bindback.jpg');
+    background-image: url('./images/bindback.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;

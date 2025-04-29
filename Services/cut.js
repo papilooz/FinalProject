@@ -8,9 +8,9 @@ const descriptionElement = document.getElementById('cutting-description');
 
 // Background images for carousel
 const backgroundImages = [
-    'stud4.jpg',
-    'cuttwe.webp',
-    'stud5.jpg'
+    './images/stud4.jpg',
+    './images/cuttwe.webp',
+    './images/stud5.jpg'
 ];
 
 // Subtitle and description paired with each background image

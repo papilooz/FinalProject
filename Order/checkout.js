@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cashInput = document.getElementById("cashInput");
   const changeDisplay = document.getElementById("changeDisplay");
   const confirmButton = document.querySelector(".btn.btn-primary");
+  const cancelButton = document.getElementById("cancel-order");  // Added cancelButton
 
   const priceMap = {
     "Digital Printing": 5,
@@ -122,12 +123,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!allFilled) {
       const popup = document.getElementById("popup-message");
-      popup.style.display = "flex";
-
-      setTimeout(() => {
-        popup.style.display = "none";
-      }, 2000);
-
+      if (popup) {
+        popup.style.display = "flex";
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 2000);
+      }
       return;
     }
 
@@ -154,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "order.html";
   });
 
-  document.getElementById("cancel-order").addEventListener("click", () => {
+  cancelButton.addEventListener("click", () => {
     window.location.href = "order.html";
   });
 

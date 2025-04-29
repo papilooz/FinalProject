@@ -1,0 +1,146 @@
+/* Updated CSS (laminating.css) */
+body {
+    font-family: sans-serif;
+    transition: background-image 0.5s ease-in-out;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html, body {
+    height: 100%;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 82%;
+    position: relative;
+    color: #fff;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2A5772;
+    opacity: 0.5;
+    z-index: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    font-size: larger;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hero-content h1 {
+    font-size: 6em;
+    margin-bottom: 10px;
+    /* Add media query for responsive font size */
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.hero-buttons button {
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hero-buttons .book-table {
+    background-color: #EE7D57;
+    color: #fff;
+    border: none;
+}
+
+.hero-buttons .book-table:hover {
+    background-color: #2A5772;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    z-index: 2;
+    opacity: 0.7;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-button:hover {
+    opacity: 1;
+}
+
+.prev-button {
+    left: 20px;
+}
+
+.next-button {
+    right: 20px;
+}
+
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    background-color: #EE7D57;
+    color: #fff;
+    border: none;
+}
+
+.dropdown-toggle:hover {
+    background-color: #2A5772;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ddd;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .hero-content h1 {
+      font-size: 4em; /* Adjust font size for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+      font-size: 3em; /* Adjust font size for phones */
+  }
+  .hero-buttons button{
+      font-size: 0.9em;
+      padding: 10px 20px;
+  }
+}

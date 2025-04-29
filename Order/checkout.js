@@ -80,14 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const warning = document.getElementById("cashWarning");
 
-      if (!isNaN(change) && change >= 0) {
-        changeDisplay.textContent = 'PHP ' + change.toFixed(2);
-        confirmButton.disabled = false;
+      if (!isNaN(cash) && cash >= total) {
+        const change = cash - grantTotal;
+        changeDisplay.textContent = 'PHP ${change}';
         warning.textContent = "";
+        confirmButton.disabled = false;
       } else {
         changeDisplay.textContent = "PHP 0";
-        confirmButton.disabled = true;
         warning.textContent = "Insufficient payment.";
+        confirmButton.disabled = true;
       }
     });
   };

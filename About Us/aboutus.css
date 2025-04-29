@@ -35,6 +35,8 @@ body {
   color: white;
   position: relative;
   z-index: 2;
+  white-space: pre-line;
+  text-align: center;
 }
 
 /* Responsive h1 for smaller screens */
@@ -45,10 +47,11 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .about-hero h1 {
-    font-size: 24px;
-    padding: 15px;
+    white-space: pre-line;
+    text-align: center;
+    font-size: 50px;
   }
 }
 

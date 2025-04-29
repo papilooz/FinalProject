@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       changeDisplay.textContent = "PHP 0.00";
       confirmButton.disabled = true;
-      warning.textContent = "Insufficient payment. Please enter enough cash.";
+      warning.textContent = "Insufficient payment.";
       
     }
   });

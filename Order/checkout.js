@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const orderList = document.getElementById("order-list");
   const totalDisplay = document.getElementById("grandTotal");
   const confirmButton = document.querySelector(".btn.btn-primary");
+  const cashInput = document.getElementById("cashInput");
+  const changeDisplay = document.getElementById("changeDisplay");
 
   const priceMap = {
     "Digital Printing": 5,
@@ -69,6 +71,22 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("vitalyCart", JSON.stringify(cart));
   };
 
+  updateChange();
+  };
+
+  const updateChange = () => {
+    const cash = parseFloat(cashInput.value);
+    const totalAmount = parseFloat(totalDisplay.textContent) || 0;
+    let change = 0;
+
+    if (!isNaN(cash)) {
+      change = cash - totalAmount;
+      changeDisplay.textContent = `PHP ${change >= 0 ? change.toFixed(2) : '0.00'}`;
+    } else {
+      changeDisplay.textContent = "PHP 0.00";
+    }
+  };
+
   orderList.addEventListener("click", (e) => {
     const button = e.target.closest("button");
     if (!button) return;
@@ -86,6 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderCart();
   });
+
+cashInput.addEventListener("input", updateChange);
 
 confirmButton.addEventListener("click", () => {
   if (Object.keys(cart).length === 0) {

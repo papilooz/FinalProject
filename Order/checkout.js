@@ -1,8 +1,11 @@
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   let cart = JSON.parse(localStorage.getItem("vitalyCart")) || {};
   const orderList = document.getElementById("order-list");
   const totalDisplay = document.getElementById("grandTotal");
   const confirmButton = document.querySelector(".btn.btn-primary");
+  const cashInput = document.getElementById("cashInput");
+  const changeDisplay = document.getElementById("changeDisplay");
 
   const priceMap = {
     "Digital Printing": 5,
@@ -47,26 +50,42 @@ document.addEventListener("DOMContentLoaded", () => {
       li.className = "mb-2";
 
       li.innerHTML = `
-  <div class="d-flex justify-content-between align-items-center order-li">
-    <div class="fw-bold cart-item">${item}</div>
+        <div class="d-flex justify-content-between align-items-center order-li">
+          <div class="fw-bold cart-item">${item}</div>
 
-    <div class="d-flex align-items-center order-li">
-      <button class="btn btn-sm btn-outline-secondary quantity-btn me-1" data-action="decrease" data-item="${item}">−</button>
-      <span class="px-2">${quantity}</span>
-      <button class="btn btn-sm btn-outline-secondary quantity-btn ms-1" data-action="increase" data-item="${item}">+</button>
-    </div>
+          <div class="d-flex align-items-center order-li">
+            <button class="btn btn-sm btn-outline-secondary quantity-btn me-1" data-action="decrease" data-item="${item}">−</button>
+            <span class="px-2">${quantity}</span>
+            <button class="btn btn-sm btn-outline-secondary quantity-btn ms-1" data-action="increase" data-item="${item}">+</button>
+          </div>
 
-    <div class="d-flex align-items-center order-li">
-      <div class="fw-semibold mx-3">₱${itemTotal}</div>
-      <button class="btn btn-sm remove-btn" data-action="remove" data-item="${item}">×</button>
-    </div>
-  </div>
-  `;
+          <div class="d-flex align-items-center order-li">
+            <div class="fw-semibold mx-3">₱${itemTotal}</div>
+            <button class="btn btn-sm remove-btn" data-action="remove" data-item="${item}">×</button>
+          </div>
+        </div>
+      `;
       orderList.appendChild(li);
     }
 
-    totalDisplay.textContent = grandTotal;
+    totalDisplay.textContent = grandTotal.toFixed(2);
     localStorage.setItem("vitalyCart", JSON.stringify(cart));
+
+    // Update change calculation whenever the total changes
+    updateChange();
+  };
+
+  const updateChange = () => {
+    const cash = parseFloat(cashInput.value);
+    const totalAmount = parseFloat(totalDisplay.textContent) || 0;
+    let change = 0;
+
+    if (!isNaN(cash)) {
+      change = cash - totalAmount;
+      changeDisplay.textContent = `PHP ${change >= 0 ? change.toFixed(2) : '0.00'}`;
+    } else {
+      changeDisplay.textContent = "PHP 0.00";
+    }
   };
 
   orderList.addEventListener("click", (e) => {
@@ -87,55 +106,56 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCart();
   });
 
-confirmButton.addEventListener("click", () => {
-  if (Object.keys(cart).length === 0) {
-    alert("Your cart is empty! Please add items before confirming your order.");
-    return;
-  }
+  cashInput.addEventListener("input", updateChange);
 
-  const requiredFields = document.querySelectorAll("[required]");
-  let allFilled = true;
-
-  requiredFields.forEach(field => {
-    if (!field.value.trim()) {
-      allFilled = false;
+  confirmButton.addEventListener("click", () => {
+    if (Object.keys(cart).length === 0) {
+      alert("Your cart is empty! Please add items before confirming your order.");
+      return;
     }
+
+    const requiredFields = document.querySelectorAll("[required]");
+    let allFilled = true;
+
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        allFilled = false;
+      }
+    });
+
+    if (!allFilled) {
+      const popup = document.getElementById("popup-message");
+      popup.style.display = "flex";
+
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2000);
+
+      return;
+    }
+
+    const emailField = document.querySelector('input[name="email"]');
+    const phoneField = document.querySelector('input[name="phone"]');
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^(09\d{9}|\+639\d{9})$/;
+
+    if (!emailPattern.test(emailField.value.trim())) {
+      alert("Please enter a valid email address.");
+      emailField.focus();
+      return;
+    }
+
+    if (!phonePattern.test(phoneField.value.trim())) {
+      alert("Please enter a valid Philippine phone number (e.g., 09171234567 or +639171234567).");
+      phoneField.focus();
+      return;
+    }
+
+    alert("Order confirmed! Thank you for ordering.");
+    localStorage.removeItem("vitalyCart");
+    window.location.href = "order.html";
   });
-
-  if (!allFilled) {
-    const popup = document.getElementById("popup-message");
-    popup.style.display = "flex";
-
-    setTimeout(() => {
-      popup.style.display = "none";
-    }, 2000);
-
-    return;
-  }
-
-  // Email and Philippines phone validation
-  const emailField = document.querySelector('input[name="email"]');
-  const phoneField = document.querySelector('input[name="phone"]');
-
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phonePattern = /^(09\d{9}|\+639\d{9})$/; // PH format
-
-  if (!emailPattern.test(emailField.value.trim())) {
-    alert("Please enter a valid email address.");
-    emailField.focus();
-    return;
-  }
-
-  if (!phonePattern.test(phoneField.value.trim())) {
-    alert("Please enter a valid Philippine phone number (e.g., 09171234567 or +639171234567).");
-    phoneField.focus();
-    return;
-  }
-
-  alert("Order confirmed! Thank you for ordering.");
-  localStorage.removeItem("vitalyCart");
-  window.location.href = "order.html";
-});
 
   document.getElementById("cancel-order").addEventListener("click", () => {
     window.location.href = "order.html";
@@ -143,3 +163,4 @@ confirmButton.addEventListener("click", () => {
 
   renderCart(); // Initial render
 });
+</script>

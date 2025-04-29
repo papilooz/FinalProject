@@ -1,21 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Add cash and change calculation script
-  const cashInput = document.getElementById("cashInput");
+  const cashInput = document.querySelector('input');
   const grandTotalElem = document.getElementById("grandTotal");
   const changeDisplay = document.getElementById("changeDisplay");
 
-  // Sample: Set example total, or get this dynamically from your cart total
-  let totalAmount = 250; // Replace with dynamic cart total later
-  grandTotalElem.textContent = totalAmount.toFixed(2);
-
   // Calculate change when user types
-  cashInput.addEventListener("input", function () {
+  cashInput.addEventListener("input", () {
     const cash = parseFloat(cashInput.value);
-    let change = 0;
+    const change = cash - total;
 
-    if (!isNaN(cash)) {
-      change = cash - totalAmount;
-      changeDisplay.textContent = `PHP ${change >= 0 ? change.toFixed(2) : '0.00'}`;
+    if (!isNaN(change) && change >=0) {
+      changeDisplay.textContent = 'PHP ' + change.toFixed(2);
     } else {
       changeDisplay.textContent = "PHP 0.00";
     }

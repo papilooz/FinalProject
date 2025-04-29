@@ -298,3 +298,11 @@ padding-right: 15px;
 .learn-button:hover {
   background-color: #2a5772;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}

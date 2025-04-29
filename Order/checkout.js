@@ -7,12 +7,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // Calculate change when user types
   cashInput.addEventListener("input", () => {
     const cash = parseFloat(cashInput.value);
+    const total = parseFloat(grandTotalElem.textContent);
     const change = cash - total;
+
+    const warning = document.getElementById("cashWarning");
 
     if (!isNaN(change) && change >=0) {
       changeDisplay.textContent = 'PHP ' + change.toFixed(2);
+      confirmButton.disabled = false;
+      warning.textContent = "";
     } else {
       changeDisplay.textContent = "PHP 0.00";
+      confirmButton.disabled = true;
+      warning.textContent = "Insufficient payment. Please enter enough cash.";
+      
     }
   });
 

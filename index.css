@@ -604,3 +604,19 @@
   background-color: #2a5772;
   color: #fff;
 }
+
+.buy-now-button {
+    background-color: blue;
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Adjust padding for button size */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px; /* Optional: adds rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.buy-now-button:hover {
+    background-color: darkblue; /* Darker blue on hover */
+}

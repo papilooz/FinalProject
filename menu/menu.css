@@ -306,3 +306,9 @@ html {
 a {
   text-decoration: none;
 }
+
+.card-category {
+  text-decoration: none;
+  color: inherit; /* Optional: prevents blue link color */
+}
+

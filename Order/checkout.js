@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmButton.disabled = false;
         warning.textContent = "";
       } else {
-        changeDisplay.textContent = "PHP 0.00";
+        changeDisplay.textContent = "PHP 0";
         confirmButton.disabled = true;
         warning.textContent = "Insufficient payment.";
       }

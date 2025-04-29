@@ -4,26 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const grandTotalElem = document.getElementById("grandTotal");
   const changeDisplay = document.getElementById("changeDisplay");
 
-  // Calculate change when user types
-  cashInput.addEventListener("input", () => {
-    const cash = parseFloat(cashInput.value);
-    const total = parseFloat(grandTotalElem.textContent);
-    const change = cash - total;
-
-    const warning = document.getElementById("cashWarning");
-
-    if (!isNaN(change) && change >=0) {
-      changeDisplay.textContent = 'PHP ' + change.toFixed(2);
-      confirmButton.disabled = false;
-      warning.textContent = "";
-    } else {
-      changeDisplay.textContent = "PHP 0.00";
-      confirmButton.disabled = true;
-      warning.textContent = "Insufficient payment.";
-      
-    }
-  });
-
   // Cart handling script
   let cart = JSON.parse(localStorage.getItem("vitalyCart")) || {};
   const orderList = document.getElementById("order-list");
@@ -75,13 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
       li.innerHTML = `
         <div class="d-flex justify-content-between align-items-center order-li">
           <div class="fw-bold cart-item">${item}</div>
-
           <div class="d-flex align-items-center order-li">
             <button class="btn btn-sm btn-outline-secondary quantity-btn me-1" data-action="decrease" data-item="${item}">−</button>
             <span class="px-2">${quantity}</span>
             <button class="btn btn-sm btn-outline-secondary quantity-btn ms-1" data-action="increase" data-item="${item}">+</button>
           </div>
-
           <div class="d-flex align-items-center order-li">
             <div class="fw-semibold mx-3">₱${itemTotal}</div>
             <button class="btn btn-sm remove-btn" data-action="remove" data-item="${item}">×</button>
@@ -93,6 +71,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     totalDisplay.textContent = grandTotal;
     localStorage.setItem("vitalyCart", JSON.stringify(cart));
+
+    // Update the change display when cash input changes
+    cashInput.addEventListener("input", () => {
+      const cash = parseFloat(cashInput.value);
+      const total = parseFloat(grandTotalElem.textContent);
+      const change = cash - grandTotal; // use grandTotal directly
+
+      const warning = document.getElementById("cashWarning");
+
+      if (!isNaN(change) && change >= 0) {
+        changeDisplay.textContent = 'PHP ' + change.toFixed(2);
+        confirmButton.disabled = false;
+        warning.textContent = "";
+      } else {
+        changeDisplay.textContent = "PHP 0.00";
+        confirmButton.disabled = true;
+        warning.textContent = "Insufficient payment.";
+      }
+    });
   };
 
   orderList.addEventListener("click", (e) => {

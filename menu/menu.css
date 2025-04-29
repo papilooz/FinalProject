@@ -285,3 +285,17 @@ padding-right: 15px;
 .buy-now-button:hover {
   background-color: #ee7d57;
 }
+
+}
+.learn-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ee7d57;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.learn-button:hover {
+  background-color: #2a5772;
+}

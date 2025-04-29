@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const changeDisplay = document.getElementById("changeDisplay");
 
   // Calculate change when user types
-  cashInput.addEventListener("input", () {
+  cashInput.addEventListener("input", () => {
     const cash = parseFloat(cashInput.value);
     const change = cash - total;
 

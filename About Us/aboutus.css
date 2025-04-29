@@ -3,13 +3,14 @@ body {
   margin: 0;
   background-color: #fafafa;
   color: black;
+  overflow-x: hidden;
 }
 
 /* Hero Section */
 .about-hero {
   position: relative;
   text-align: center;
-  padding: 100px;
+  padding: 60px 20px;
   background-image: url('images/bg.png');
   background-size: cover;
   background-position: center;
@@ -35,8 +36,10 @@ body {
   color: white;
   position: relative;
   z-index: 2;
-  white-space: pre-line;
+  white-space: normal;
   text-align: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Responsive h1 for smaller screens */
@@ -44,14 +47,6 @@ body {
   .about-hero h1 {
     font-size: 32px;
     padding: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-hero h1 {
-    white-space: pre-line;
-    text-align: center;
-    font-size: 50px;
   }
 }
 

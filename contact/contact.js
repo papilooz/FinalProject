@@ -17,11 +17,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.addEventListener("DOMContentLoaded", function () {
+    // Form validation
     const contactForm = document.getElementById("contactForm");
+    const phoneInput = document.getElementById("phone");
   
-    contactForm.addEventListener("submit", function (event) {
+    // Allow only numbers in the phone input
+    phoneInput.addEventListener("input", () => {
+      phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
+    });
+  
+    // Validate the phone number and handle form submission
+    contactForm.addEventListener("submit", (event) => {
       event.preventDefault(); // Prevent the default form submission behavior
-      alert("Form submitted successfully!");
-      contactForm.reset(); // Optionally reset the form after submission
+  
+      const phoneValue = phoneInput.value;
+  
+      if (!phoneValue || phoneValue.length < 10) {
+        alert("Please enter a valid phone number with at least 10 digits.");
+      } else {
+        alert("Form submitted successfully!");
+        contactForm.reset(); // Reset the form after successful submission
+      }
     });
   });

@@ -32,9 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
       const phoneValue = phoneInput.value;
   
-      if (!phoneValue || phoneValue.length < 10) {
+        if (!phoneValue || phoneValue.length < 10) {
         alert("Please enter a valid phone number with at least 10 digits.");
-      } else {
+      } else if (phoneValue.length > 12) {
+        alert("Phone number should not exceed 12 digits.");
+      }
+      else {
         alert("Form submitted successfully!");
         contactForm.reset(); // Reset the form after successful submission
       }

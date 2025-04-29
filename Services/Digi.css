@@ -224,7 +224,7 @@ p.image-description.fade-out {
     transform: translateY(20px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     opacity: 0.8;
-    background-image: url('printing.jpg');
+    background-image: url('./images/printing.jpg');
     background-size: cover;
     background-position: center;
     position: relative;

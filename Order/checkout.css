@@ -163,6 +163,10 @@ td {
   font-size: 14px;
 }
 
+#changeDisplay {
+  font-weight: bold;
+}
+
 .justify-content-between {
   justify-content: space-between !important;
   margin-bottom: 20px;

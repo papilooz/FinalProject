@@ -8,7 +8,7 @@ body {
 
 /* Hero Section Styling */
 .hero-section {
-    background-image: url('dgprint.jpg');
+    background-image: url('../images/dgprint.jpg');
     background-size: cover;
     background-position: center;
     color: #ffffff;

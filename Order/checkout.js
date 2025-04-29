@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let cart = JSON.parse(localStorage.getItem("vitalyCart")) || {};
   const orderList = document.getElementById("order-list");
   const totalDisplay = document.getElementById("grandTotal");
-  const confirmButton = document.querySelector(".btn.btn-primary");
   const cashInput = document.getElementById("cashInput");
   const changeDisplay = document.getElementById("changeDisplay");
+  const confirmButton = document.querySelector(".btn.btn-primary");
 
   const priceMap = {
     "Digital Printing": 5,

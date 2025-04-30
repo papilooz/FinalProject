@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const li = document.createElement("li");
       li.className = "mb-2";
 
-      li.innerHTML = 
+      li.innerHTML = `
   <div class="d-flex justify-content-between align-items-center order-li">
     <div class="fw-bold cart-item">${item}</div>
 
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <button class="btn btn-sm remove-btn" data-action="remove" data-item="${item}">×</button>
     </div>
   </div>
-  ;
+  `;
       orderList.appendChild(li);
     }
 

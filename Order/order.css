@@ -23,7 +23,6 @@ h2 {
   text-align: center;
   margin-bottom: 40px;
 }
-
 .card {
   background: #fff;
   border-radius: 16px;
@@ -32,12 +31,10 @@ h2 {
   margin-bottom: 30px;
   transition: all 0.3s ease-in-out;
 }
-
 .card:hover {
   box-shadow: 0 16px 32px rgba(0,0,0,0.1);
   transform: translateY(-2px);
 }
-
 .section-title {
   color: #EE7D57;
   font-size: 20px;
@@ -48,26 +45,22 @@ h2 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 p {
   display: block;
   margin: 10px 0;
   padding-left: 0;
   font-size: 17px;
 }
-
 label {
   display: block;
   margin-bottom: 12px;
   font-size: 15px;
 }
-
 input[type="checkbox"], input[type="radio"] {
   margin-right: 10px;
   accent-color: #2A5772;
   transform: scale(1.2);
 }
-
 input[type="number"], input[type="file"], select {
   display: block;
   margin: 10px 0 20px;
@@ -78,14 +71,13 @@ input[type="number"], input[type="file"], select {
   font-size: 15px;
   font-family: 'Poppins', sans-serif;
 }
-
 .submit-btn {
   padding: 16px 32px;
   background-color: #2A5772;
   color: white;
   border: none;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 50px;
   cursor: pointer;
   font-weight: 600;
   margin-top: 20px;
@@ -98,23 +90,19 @@ input[type="number"], input[type="file"], select {
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
 }
-
 .submit-btn:hover {
   transform: scale(1.03);
   background-color: #EE7D57;
   color: white;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
-
 .step {
   display: none;
 }
-
 .step.active {
   display: block;
   animation: fadeIn 0.4s ease-in;
 }
-
 @keyframes fadeIn {
   from {
       opacity: 0;
@@ -125,7 +113,6 @@ input[type="number"], input[type="file"], select {
       transform: translateY(0);
  }
 }
-
 .highlight {
   background-color: #2A5772;
   color: white;
@@ -136,36 +123,29 @@ input[type="number"], input[type="file"], select {
   font-size: 13px;
   margin-left: 5px;
 }
-
 .menu-option {
   display: none;
 }
-
 .menu-option.active {
   display: block;
 }
-
 .services-menu-container {
   display: flex;
   justify-content: space-between;
   gap: 40px;
 }
-
 .services-menu-container .card {
   flex: 1;
 }
-
 .services-menu-container .menu-option {
   flex: 1;
 }
-
 .img-menu {
   width: 100%;
   height: auto;
   border-radius: 8px;
   margin-bottom: 20px;
 }
-
 /* Styled option boxes */
 .option-box {
   display: flex;
@@ -183,21 +163,17 @@ input[type="number"], input[type="file"], select {
   font-size: 18px;
   font-weight: 500;
 }
-
 .option-box input {
   display: none;
 }
-
 .option-box.selected {
   border-color: #2A5772;
   background-color: #e0f2ff;
   color: #2A5772;
 }
-
 .option-box:hover {
   background-color: #eaeaea;
 }
-
 /* Menu Items */
 .flexcontainer {
   display: flex;
@@ -207,14 +183,13 @@ input[type="number"], input[type="file"], select {
   margin: 20px 0;
   padding: 10px;
 }
-
 .item {
   flex: 1 1 calc(25% - 20px);
-  /* Adjust the width as needed */
+ /* Adjust the width as needed */
   min-width: 200px;
-  /* Minimum width for smaller screens */
+ /* Minimum width for smaller screens */
   max-width: 300px;
-  /* Maximum width for larger screens */
+ /* Maximum width for larger screens */
   margin: 10px;
   padding: 10px;
   border-radius: 12px;
@@ -234,19 +209,16 @@ input[type="number"], input[type="file"], select {
   margin: 10px;
   text-align: center;
 }
-
 .item img {
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
-
 .quantity {
   display: none;
   margin-top: 10px;
   font-size: 16px;
 }
-
 .qty-btn {
   margin: 0 5px;
   padding: 2px 8px;
@@ -261,11 +233,9 @@ input[type="number"], input[type="file"], select {
   background-color: #2A5772;
   color: white;
 }
-
 .qty-num {
   font-weight: bold;
 }
-
 #order-list button {
   font-size: 0.8rem;
   line-height: 1;
@@ -280,6 +250,7 @@ input[type="number"], input[type="file"], select {
 }
 
 /* Nav */
+
 .nav-btn {
   background-color: #EE7D57;
   color: white !important;
@@ -396,130 +367,4 @@ input[type="number"], input[type="file"], select {
   font-weight: 600;
   text-decoration: none;
   transition: background-color 0.3s ease;
-}
-
-/* General styles for mobile responsiveness */
-@media (max-width: 768px) {
-  /* Adjust card layout */
-  .services-menu-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .services-menu-container .card {
-    flex: none;
-    width: 100%;
-  }
-
-  /* Card styling for smaller screens */
-  .card {
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-
-  /* Adjust h2 font size */
-  h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-
-  /* Adjust the items flex container for mobile */
-  .flexcontainer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Adjust item size for mobile */
-  .item {
-    flex: 1 1 100%;
-    /* Minimum width for smaller screens */
-  }
-
-  /* Adjust quantity section visibility */
-  .quantity {
-    display: block;
-  }
-
-  /* Adjust button styling for smaller screens */
-  .submit-btn {
-    padding: 12px 24px;
-    font-size: 14px;
-    max-width: 100%;
-    margin-top: 15px;
-  }
-
-  /* Adjust mobile navbar */
-  .navbar-nav .nav-item {
-    margin-right: 10px;
-  }
-
-  .mobile-nav-links li {
-    padding: 12px;
-  }
-
-  /* Mobile dropdown menu styles */
-  .dropdown-menu .dropdown-item {
-    padding: 8px 15px;
-  }
-
-  .custom-toggler-icon {
-    width: 20px;
-    height: 15px;
-  }
-
-  /* Adjust menu option boxes */
-  .option-box {
-    flex-direction: column;
-    padding: 10px 15px;
-    font-size: 16px;
-  }
-
-  /* Adjust for small screens: decrease card padding */
-  .services-card {
-    padding: 15px;
-  }
-}
-
-/* For very small screens (e.g., mobile phones) */
-@media (max-width: 480px) {
-  /* Adjust card layout further */
-  .card {
-    padding: 15px;
-  }
-
-  /* Adjust heading size */
-  h2 {
-    font-size: 24px;
-  }
-
-  /* Reduce gap between items */
-  .flexcontainer {
-    gap: 10px;
-  }
-
-  /* Decrease font size of items */
-  .item {
-    font-size: 13px;
-  }
-
-  /* Mobile-specific styles for buttons */
-  .submit-btn {
-    padding: 12px 24px;
-    font-size: 14px;
-  }
-
-  /* Adjust the quantity display */
-  .quantity {
-    font-size: 14px;
-  }
-
-  /* Adjust navbar items spacing */
-  .navbar-nav .nav-item {
-    margin-right: 8px;
-  }
-
-  /* Adjust mobile menu padding */
-  .mobile-nav-links li {
-    padding: 10px;
-  }
 }

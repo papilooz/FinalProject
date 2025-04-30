@@ -87,7 +87,44 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCart();
   });
 
- confirmButton.addEventListener("click", () => {
+  confirmButton.addEventListener("click", () => {
+    if (Object.keys(cart).length === 0) {
+      alert("Your cart is empty! Please add items before confirming your order.");
+      return;
+    }
+
+    const requiredFields = document.querySelectorAll("[required]");
+    let allFilled = true;
+
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        allFilled = false;
+      }
+    });
+
+    if (!allFilled) {
+      const popup = document.getElementById("popup-message");
+      popup.style.display = "flex";
+
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2000);
+
+      return;
+    }
+
+    alert("Order confirmed! Thank you for ordering.");
+    localStorage.removeItem("vitalyCart");
+    window.location.href = "order.html";
+  });
+
+  document.getElementById("cancel-order").addEventListener("click", () => {
+    window.location.href = "order.html";
+  });
+
+  renderCart(); // Initial render
+});
+confirmButton.addEventListener("click", () => {
   if (Object.keys(cart).length === 0) {
     alert("Your cart is empty! Please add items before confirming your order.");
     return;

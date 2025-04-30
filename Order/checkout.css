@@ -78,7 +78,6 @@ h2 {
 
 .form-label{
   text-align: left;
-  font-weight: 500;
 }
 
 label, table {
@@ -160,22 +159,8 @@ td {
 }*/
 
 .Yorder > div {
+  padding: 10px 0;
   font-size: 14px;
-}
-
-#changeDisplay {
-  font-weight: bold;
-}
-
-#cashWarning {
-  color: black;
-  font-size: 0.9em;
-  margin-top: 5px;
-}
-
-.justify-content-between {
-  justify-content: space-between !important;
-  margin-bottom: 20px;
 }
 
 .cs-btn {

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Cart handling script
   let cart = JSON.parse(localStorage.getItem("vitalyCart")) || {};
   const orderList = document.getElementById("order-list");
   const totalDisplay = document.getElementById("grandTotal");
@@ -11,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Laminating": 30,
     "Cutting": 50,
     "Mocha": 150,
-    "Vanilla": 140,
+    "Vanila": 140,
     "Caramel": 145,
     "Espresso": 120,
     "Americano": 160,
@@ -48,23 +47,27 @@ document.addEventListener("DOMContentLoaded", () => {
       li.className = "mb-2";
 
       li.innerHTML = `
-        <div class="d-flex justify-content-between align-items-center order-li">
-          <div class="fw-bold cart-item">${item}</div>
-          <div class="d-flex align-items-center order-li">
-            <button class="btn btn-sm btn-outline-secondary quantity-btn me-1" data-action="decrease" data-item="${item}">−</button>
-            <span class="px-2">${quantity}</span>
-            <button class="btn btn-sm btn-outline-secondary quantity-btn ms-1" data-action="increase" data-item="${item}">+</button>
-          </div>
-          <div class="d-flex align-items-center order-li">
-            <div class="fw-semibold mx-3">₱${itemTotal}</div>
-            <button class="btn btn-sm remove-btn" data-action="remove" data-item="${item}">×</button>
-          </div>
-        </div>
-      `;
+  <div class="d-flex justify-content-between align-items-center order-li">
+    <div class="fw-bold cart-item">${item}</div>
+
+    <div class="d-flex align-items-center order-li">
+      <button class="btn btn-sm btn-outline-secondary quantity-btn me-1" data-action="decrease" data-item="${item}">â</button>
+      <span class="px-2">${quantity}</span>
+      <button class="btn btn-sm btn-outline-secondary quantity-btn ms-1" data-action="increase" data-item="${item}">+</button>
+    </div>
+
+    <div class="d-flex align-items-center order-li">
+      <div class="fw-semibold mx-3">â±${itemTotal}</div>
+      <button class="btn btn-sm remove-btn" data-action="remove" data-item="${item}">Ã</button>
+    </div>
+  </div>
+  `;
       orderList.appendChild(li);
     }
 
+    totalDisplay.textContent = grandTotal;
     localStorage.setItem("vitalyCart", JSON.stringify(cart));
+  };
 
   orderList.addEventListener("click", (e) => {
     const button = e.target.closest("button");
@@ -84,59 +87,52 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCart();
   });
 
-  confirmButton.addEventListener("click", () => {
-    if (Object.keys(cart).length === 0) {
-      alert("Your cart is empty! Please add items before confirming your order.");
-      return;
+ confirmButton.addEventListener("click", () => {
+  if (Object.keys(cart).length === 0) {
+    alert("Your cart is empty! Please add items before confirming your order.");
+    return;
+  }
+
+  const requiredFields = document.querySelectorAll("[required]");
+  let allFilled = true;
+
+  requiredFields.forEach(field => {
+    if (!field.value.trim()) {
+      allFilled = false;
     }
-
-    const requiredFields = document.querySelectorAll("[required]");
-    let allFilled = true;
-
-    requiredFields.forEach(field => {
-      if (!field.value.trim()) {
-        allFilled = false;
-      }
-    });
-
-    if (!allFilled) {
-      const popup = document.getElementById("popup-message");
-      popup.style.display = "flex";
-
-      setTimeout(() => {
-        popup.style.display = "none";
-      }, 2000);
-
-      return;
-    }
-
-    // Email and Philippines phone validation
-    const emailField = document.querySelector('input[name="email"]');
-    const phoneField = document.querySelector('input[name="phone"]');
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phonePattern = /^(09\d{9}|\+639\d{9})$/; // PH format
-
-    if (!emailPattern.test(emailField.value.trim())) {
-      alert("Please enter a valid email address.");
-      emailField.focus();
-      return;
-    }
-
-    if (!phonePattern.test(phoneField.value.trim())) {
-      alert("Please enter a valid phone number (e.g., 09171234567 or +639171234567).");
-      phoneField.focus();
-      return;
-    }
-
-    alert("Order confirmed! Thank you for ordering.");
-    localStorage.removeItem("vitalyCart");
-    window.location.href = "order.html";
   });
 
-  document.getElementById("cancel-order").addEventListener("click", () => {
-    window.location.href = "order.html";
-  });
+  if (!allFilled) {
+    const popup = document.getElementById("popup-message");
+    popup.style.display = "flex";
 
-  renderCart(); // Initial render
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 2000);
+
+    return;
+  }
+
+  // Email and Philippines phone validation
+  const emailField = document.querySelector('input[name="email"]');
+  const phoneField = document.querySelector('input[name="phone"]');
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phonePattern = /^(09\d{9}|\+639\d{9})$/; // PH format
+
+  if (!emailPattern.test(emailField.value.trim())) {
+    alert("Please enter a valid email address.");
+    emailField.focus();
+    return;
+  }
+
+  if (!phonePattern.test(phoneField.value.trim())) {
+    alert("Please enter a valid Philippine phone number (e.g., 09171234567 or +639171234567).");
+    phoneField.focus();
+    return;
+  }
+
+  alert("Order confirmed! Thank you for ordering.");
+  localStorage.removeItem("vitalyCart");
+  window.location.href = "order.html";
 });

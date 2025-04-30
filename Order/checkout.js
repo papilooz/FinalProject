@@ -86,53 +86,91 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderCart();
   });
-  
+
   confirmButton.addEventListener("click", () => {
-  if (Object.keys(cart).length === 0) {
-    alert("Your cart is empty! Please add items before confirming your order.");
-    return;
-  }
-
-  const requiredFields = document.querySelectorAll("[required]");
-  let allFilled = true;
-
-  requiredFields.forEach(field => {
-    if (!field.value.trim()) {
-      allFilled = false;
+    if (Object.keys(cart).length === 0) {
+      alert("Your cart is empty! Please add items before confirming your order.");
+      return;
     }
+
+    const requiredFields = document.querySelectorAll("[required]");
+    let allFilled = true;
+
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        allFilled = false;
+      }
+    });
+
+    if (!allFilled) {
+      const popup = document.getElementById("popup-message");
+      popup.style.display = "flex";
+
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2000);
+
+      return;
+    }
+
+    alert("Order confirmed! Thank you for ordering.");
+    localStorage.removeItem("vitalyCart");
+    window.location.href = "order.html";
   });
 
-  if (!allFilled) {
-    const popup = document.getElementById("popup-message");
-    popup.style.display = "flex";
+  document.getElementById("cancel-order").addEventListener("click", () => {
+    window.location.href = "order.html";
+  });
 
-    setTimeout(() => {
-      popup.style.display = "none";
-    }, 2000);
-
-    return;
-  }
-
-  // Email and Philippines phone validation
-  const emailField = document.querySelector('input[name="email"]');
-  const phoneField = document.querySelector('input[name="phone"]');
-
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phonePattern = /^(09\d{9}|\+639\d{9})$/; // PH format
-
-  if (!emailPattern.test(emailField.value.trim())) {
-    alert("Please enter a valid email address.");
-    emailField.focus();
-    return;
-  }
-
-  if (!phonePattern.test(phoneField.value.trim())) {
-    alert("Please enter a valid Philippine phone number (e.g., 09171234567 or +639171234567).");
-    phoneField.focus();
-    return;
-  }
-
-  alert("Order confirmed! Thank you for ordering.");
-  localStorage.removeItem("vitalyCart");
-  window.location.href = "order.html";
+  renderCart(); // Initial render
 });
+
+  confirmButton.addEventListener("click", () => {
+    if (Object.keys(cart).length === 0) {
+      alert("Your cart is empty! Please add items before confirming your order.");
+      return;
+    }
+  
+    const requiredFields = document.querySelectorAll("[required]");
+    let allFilled = true;
+  
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        allFilled = false;
+      }
+    });
+  
+    if (!allFilled) {
+      const popup = document.getElementById("popup-message");
+      popup.style.display = "flex";
+  
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2000);
+  
+      return;
+    }
+  
+    // Email and Philippines phone validation
+    const emailField = document.querySelector('input[name="email"]');
+    const phoneField = document.querySelector('input[name="phone"]');
+  
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^(09\d{9}|\+639\d{9})$/; // PH format
+  
+    if (!emailPattern.test(emailField.value.trim())) {
+      alert("Please enter a valid email address.");
+      emailField.focus();
+      return;
+    }
+  
+    if (!phonePattern.test(phoneField.value.trim())) {
+      alert("Please enter a valid Philippine phone number (e.g., 09171234567 or +639171234567).");
+      phoneField.focus();
+      return;
+    }
+  
+    alert("Order confirmed! Thank you for ordering.");
+    localStorage.removeItem("vitalyCart");
+    window.location.href = "order.html";
+  });

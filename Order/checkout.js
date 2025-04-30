@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Add cash and change calculation script
-  const cashInput = document.querySelector('input');
-  const grandTotalElem = document.getElementById("grandTotal");
-  const changeDisplay = document.getElementById("changeDisplay");
-
   // Cart handling script
   let cart = JSON.parse(localStorage.getItem("vitalyCart")) || {};
   const orderList = document.getElementById("order-list");
@@ -69,29 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       orderList.appendChild(li);
     }
 
-    totalDisplay.textContent = grandTotal;
     localStorage.setItem("vitalyCart", JSON.stringify(cart));
-
-    // Update the change display when cash input changes
-    cashInput.addEventListener("input", () => {
-      const cash = parseFloat(cashInput.value);
-      const total = parseFloat(grandTotalElem.textContent);
-      const change = cash - grandTotal; // use grandTotal directly
-
-      const warning = document.getElementById("cashWarning");
-
-      if (!isNaN(cash) && cash >= total) {
-        const change = cash - grantTotal;
-        changeDisplay.textContent = 'PHP ${change}';
-        warning.textContent = "";
-        confirmButton.disabled = false;
-      } else {
-        changeDisplay.textContent = "PHP 0";
-        warning.textContent = "Insufficient payment.";
-        confirmButton.disabled = true;
-      }
-    });
-  };
 
   orderList.addEventListener("click", (e) => {
     const button = e.target.closest("button");

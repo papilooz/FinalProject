@@ -441,3 +441,19 @@ td {
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
+
+ #changeDisplay {
+   font-weight: bold;
+ }
+ 
+ #cashWarning {
+   color: black;
+   font-size: 0.9em;
+   margin-top: 5px;
+ }
+ 
+ .justify-content-between {
+   justify-content: space-between !important;
+   margin-bottom: 20px;
+ }
+ 
